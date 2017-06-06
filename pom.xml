@@ -6,7 +6,7 @@
 
     <groupId>com.github.cschen1205</groupId>
     <artifactId>java-ai-minefield-navigator</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <licenses>
         <license>
@@ -37,8 +37,8 @@
     </issueManagement>
 
 
-    <name>Expert System Shell</name>
-    <description>Expert system shell implemented in Java</description>
+    <name>TD-FALCON MineField Navigator Intelligent Agent</name>
+    <description>TD-FALCON is a fusion architecture that incorporates temporal difference methods and self-organizing neural networks for reinforcement learning with delayed rewards. It learns by creating cognitive codes across sensory input, actions, and rewards.</description>
     <url>https://github.com/cschen1205/java-ai-minefield-navigator</url>
 
     <distributionManagement>
