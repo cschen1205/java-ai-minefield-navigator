@@ -12,8 +12,12 @@ The implementation of TD-FALCON can be found in the minefield navigation simulat
 
 Add the following dependency to your POM file:
 
-```java
-
+```xml
+<dependency>
+  <groupId>com.github.cschen1205</groupId>
+  <artifactId>java-ai-minefield-navigator</artifactId>
+  <version>1.0.2</version>
+</dependency>
 ```
 
 
@@ -23,17 +27,18 @@ Add the following dependency to your POM file:
 The sample code below shows how to invoke the Q-Learn TD-FALCON MineField Navigator GUI:
 
 ```java
-MineFieldSimulatorConfig config = new MineFieldSimulatorConfig();
-config.setImmediateRewardProvided(true);
-config.setNumAgents(1);
-
-FalconConfig falconConfig = new FalconConfig();
-falconConfig.numAction = FalconNavAgent.numAction;
-falconConfig.numState = config.numState();
-falconConfig.numReward = 2;
-
-MineFieldSimulatorGUI gui = new MineFieldSimulatorGUI(config, falconConfig);
-
+public static void main(String[] args) {
+    MineFieldSimulatorConfig config = new MineFieldSimulatorConfig();
+    config.setImmediateRewardProvided(true);
+    config.setNumAgents(1);
+    
+    FalconConfig falconConfig = new FalconConfig();
+    falconConfig.numAction = FalconNavAgent.numAction;
+    falconConfig.numState = config.numState();
+    falconConfig.numReward = 2;
+    
+    MineFieldSimulatorGUI gui = new MineFieldSimulatorGUI(config, falconConfig);
+}
 ```
 
 # Usage: Invoke Command-line based Simulator
@@ -43,21 +48,23 @@ The sample code below shows show to run the TD-FALCON MineField Navigator simula
 
 
 ```java
-MineFieldSimulatorConfig config = new MineFieldSimulatorConfig();
-config.setImmediateRewardProvided(false);
-config.setNumRuns(1);
-config.setMaxTrial(300);
-
-
-FalconConfig falconConfig = new FalconConfig();
-falconConfig.numAction = FalconNavAgent.numAction;
-falconConfig.numState = config.numState();
-falconConfig.numReward = 2;
-falconConfig.isBounded = false;
-
-
-MineFieldSimulator simulator = new MineFieldSimulatorQ(config, falconConfig);
-simulator.runSims();
+public static void main(String[] args) {
+    MineFieldSimulatorConfig config = new MineFieldSimulatorConfig();
+    config.setImmediateRewardProvided(false);
+    config.setNumRuns(1);
+    config.setMaxTrial(300);
+    
+    
+    FalconConfig falconConfig = new FalconConfig();
+    falconConfig.numAction = FalconNavAgent.numAction;
+    falconConfig.numState = config.numState();
+    falconConfig.numReward = 2;
+    falconConfig.isBounded = false;
+    
+    
+    MineFieldSimulator simulator = new MineFieldSimulatorQ(config, falconConfig);
+    simulator.runSims();
+}
 ```
 
 The above codes invoke the Q-Learn TD-FALCON simulator, to switch to other learning paradigms, change the 
