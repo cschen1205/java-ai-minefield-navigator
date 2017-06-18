@@ -12,11 +12,39 @@ The implementation of TD-FALCON can be found in the minefield navigation simulat
 
 Add the following dependency to your POM file:
 
+```java
+
+```
+
 
 
 # Usage
 
-The sample code below shows how to invoke the TD-FALCON MineField Navigator GUI:
+# Q-Learn TD-FALCON 
+
+The sample code below shows how to invoke the Q-Learn TD-FALCON MineField Navigator GUI:
+
+```java
+MineFieldSimulatorConfig config = new MineFieldSimulatorConfig();
+config.setImmediateRewardProvided(false);
+config.setNumRuns(1);
+config.setMaxTrial(300);
+
+
+FalconConfig falconConfig = new FalconConfig();
+falconConfig.numAction = FalconNavAgent.numAction;
+falconConfig.numState = config.numState();
+falconConfig.numReward = 2;
+falconConfig.isBounded = false;
+
+
+MineFieldSimulator simulator = new MineFieldSimulatorQ(config, falconConfig);
+simulator.runSims();
+```
 
 The sample code below shows show to run the TD-FALCON MineField Navigator simulation in console mode:
+
+```java
+
+```
 

@@ -31,7 +31,7 @@ public class MineFieldSimulatorUnitTest {
         if(falconMode.equalsIgnoreCase("sarsa")) {
             return new MineFieldSimulatorSarsa(simConfig, aiConfig);
         } else if(falconMode.equalsIgnoreCase("qlearn")) {
-            return new MineFieldSimulatorSarsa(simConfig, aiConfig);
+            return new MineFieldSimulatorQ(simConfig, aiConfig);
         } else if(falconMode.equalsIgnoreCase("sarsalambda")) {
             return new MineFieldSimulatorSarsaLambda(simConfig, aiConfig);
         } else if(falconMode.equalsIgnoreCase("r")) {
